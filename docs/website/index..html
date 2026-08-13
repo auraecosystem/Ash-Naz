@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Review comments</title>
+<meta name="description" content="Lists open issues in an horizontal activity github repository" />
+<link rel="preconnect" href="https://labs.w3.org">
+<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/base.css" type="text/css" />
+<style>
+body {
+	max-width: 60em;
+}
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+th {
+	background-color: #eee;
+	border: 1px solid #ccc;
+}
+.date {
+	white-space:nowrap;
+	width: 8em;
+  text-align: end;
+  vertical-align: top;
+}
+td {
+	padding: 0 .3em;
+	border: 1px solid #ccc;
+	}
+.labels {
+	float: left;
+	height: 11px;
+	width: 11px;
+	border-radius: 2px;
+	border: 1px solid black;
+	font-size: .2em;
+	margin: 1em 3em 1em .5em;
+	color: rgba(0,0,0,0.00);
+}
+.issueType {
+  vertical-align: top;
+  width: 1em;
+}
+.issueType span {
+	margin: 3px 0;
+}
+#internal-links {
+	display: none;
+	}
+.hidden {
+	display: none;
+	}
+.trackerId {
+    text-align: start;
+    vertical-align: top;
+    font-size: 80%;
+    }
+ul {
+	list-style-type: none;
+	}
+#filterList span {
+    border-radius: 3px;
+    }
+li.selected {
+	list-style-type: disc;
+}
+li.selected a {
+    font-weight: bold;
+    }
+tr:hover {
+    background-color: antiquewhite;
+}
+footer {
+	margin-top: 2em;
+}
+h2 > a.self-link::before {
+  content: "§";
+	color: inherit;
+  font-size: 83%;
+  margin-left: -1em;
+  opacity: 0.5;
+  padding-right: 1ex;
+  text-decoration: none;
+}
+</style>
+<script type=module src="redirect.js"></script>
+<script type=module src="display.js" defer></script>
+
+</head>
+
+<body>
+<div class='head'>
+		<a class='logo' href="https://www.w3.org/"><img src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" alt="W3C" height="48" width="72"></a>
+		<h1><span class='groupname'></span> review comment tracker</h1>
+		<h2>Tracking the issues in <a class='link_repo'>GitHub</a></h2>
+    <hr title="Separator for header">
+</div>
+<p id="log"></p>
+<nav id="toc">
+<ul>
+	<li>Show items with that label only:
+    <ul id="filterList">
+    </ul>
+	</li>
+	<li>Horizontal repositories:
+    <ul id="otherReposList">
+		</ul>
+	</li>
+	<li>
+		<a href="board.html">Horizontal board</a>, <a href="leaderboard.html">Leaderboard</a>
+	</li>
+	<li>Help
+		<ul>
+			<li><a href="HOWTO">How to create and track horizontal issues</a></li>
+		</ul>
+	</li>
+	<li>
+		<a href="./reviews.html">List of known specifications</a>
+	</li>
+</ul>
+</nav>
+<section id='abstract' style='clear: both'>
+  <p>This page tracks comments made by <span class='groupname'></span>  on the specs of other WGs. It only shows tracker issues <span class='groupname'></span> has not closed.
+		(Issues may remain open in the <span class='groupname'></span> tracker even if closed by the other WG in their repo.)</p>
+  <p>The sections and items within those sections are ordered by the last modified date of the items
+		in the <em>tracker</em> repository (not the discussions). The mostly recently changed items appear highest.
+		The link on the left of each line links directly to the issue where the discussion is taking place.
+		The date indicates when the <em>tracker</em> item was modified, and	the right-hand column links to the issue used
+		to track the discussion in the <a class='link_repo'></a> github repo</a>.</p>
+	<p>This page is updated every twelve hours.</p>
+<!--
+	<p>There are <span id="total">[Loading data...]</span> horizontal issues, filtered as against a specification<span id='select-label'></span>.</p>
+	-->
+	</section>
+
+<section id="rawdata" aria-live='polite'>
+</section>
+
+<footer>
+	<hr>
+	<p>This tool is developed on <a href="https://github.com/auraecoststem/horizontal-issue-tracker">GitHub</a>.</p>
+	<p>Kudos to the <a href="https://w3c.github.io/i18n-activity/reviews/">i18n Working Group</a> for their process and help.</p>
+</footer>
+</body>
+</html>
