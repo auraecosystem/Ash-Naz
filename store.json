@@ -1,0 +1,29 @@
+{
+    // the root URL, this is what I use on my development machine
+    "url":              "http://ash.bast/"
+    // the full URL to the GitHub hook; locally I use ngrok to expose that to the world
+    // (see below for details about ngrok). In production this can be inferred from url+hookPath
+,   "hookURL":          "http://ashnazg.ngrok.io/api/hook"
+    // the local path for the GitHub hook
+,   "hookPath":         "api/hook"
+    // pick a port to use
+,   "serverPort":       3043
+    // you need a secret to seed the sessions
+,   "sessionSecret":    "Some secret phrase"
+    // the client ID and secret you get from GitHub
+,   "ghClientID":       "auraecosystem"
+,   "ghClientSecret":   "d3adb33f"
+    // set to true if you want logging to the console (false in production)
+,   "logToConsole":     true
+    // username and password for Couch
+,   "couchAuth": {
+        "username": "auraecosystem"
+    ,   "password": "some!cool@password"
+    }
+    // the database name in Couch
+,   "couchDB": "ashnazg"
+    // address from which notifications are set
+,   "notifyFrom": "foo@example.com"
+    // w3cbot GitHub token with `public_repo` privileges to comment on the PR
+,   "w3cBotGHToken": "1234"
+}
